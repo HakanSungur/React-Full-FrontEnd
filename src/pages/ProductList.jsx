@@ -26,7 +26,7 @@ export default function ProductList() {
 
   return (
     <div>
-      s
+      
       <Table celled>
         <Table.Header>
           <Table.Row>

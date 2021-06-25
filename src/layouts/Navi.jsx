@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import CartSummary from "../layouts/CartSummary";
-
 import { Container, Menu } from "semantic-ui-react";
 import SingnedOut from "./SingnedOut";
 import SignedIn from "./SignedIn";
@@ -8,7 +7,9 @@ import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 
 export default function Navi() {
-  const {cartItems} = useSelector(state => state.cart)
+
+const {cartItems} = useSelector(state => state.cart )
+console.log(cartItems)
 const [isAuthenticated, setIsAuthenticated] = useState(true)
 const history= useHistory()
 function handleSignOut() {
@@ -26,7 +27,7 @@ function handleSignIn() {
           <Menu.Item name="messages" />
 
           <Menu.Menu position="right">
-          {cartItems.length>0&&<CartSummary/>}
+          {cartItems?.length > 0 && <CartSummary/>}
             {
               //Alt componente props geçiyoruz... 
               isAuthenticated?<SignedIn  signOut={handleSignOut} />:<SingnedOut signIn={handleSignIn}/>
