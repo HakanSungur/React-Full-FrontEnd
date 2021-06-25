@@ -26,7 +26,7 @@ function handleSignIn() {
           <Menu.Item name="messages" />
 
           <Menu.Menu position="right">
-           {cartItems.length>0&&<CartSummary/>}
+          {cartItems.length>0&&<CartSummary/>}
             {
               //Alt componente props geçiyoruz... 
               isAuthenticated?<SignedIn  signOut={handleSignOut} />:<SingnedOut signIn={handleSignIn}/>
